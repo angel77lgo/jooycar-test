@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27018:27018"
+  app:
+    container_name: jooycar
+    image: jooycar
+    build:
+      context: docker
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    command: >
+      sh -c 'npm i 
+      && rm -rf dist
+      && npm run build
+      && npm run start:dev'
