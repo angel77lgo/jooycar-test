@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, Post, Query } from '@nestjs/common';
 import { ApiBody, ApiQuery, ApiTags } from '@nestjs/swagger';
 import { ReadingDto, ReadingsDto } from '../schema/reading.dto';
 import { TripService } from '../services/trip.service';
@@ -13,6 +13,7 @@ export class TripController {
 
   @Post()
   @ApiBody({required: true, type: ReadingsDto})
+  @HttpCode(201)
   public async createAction(@Body() reading: ReadingsDto) {
 
     

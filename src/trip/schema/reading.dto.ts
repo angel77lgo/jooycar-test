@@ -2,10 +2,10 @@ import { ApiProperty } from "@nestjs/swagger";
 
 export class Location {
   @ApiProperty()
-  lat: string;
+  lat: number;
   
   @ApiProperty()
-  lon: string;
+  lon: number;
 }
 
 export class ReadingDto {

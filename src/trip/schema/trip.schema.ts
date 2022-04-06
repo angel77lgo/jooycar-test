@@ -1,20 +1,20 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
-import mongoose from "mongoose";
 import { v4 } from 'uuid';
+import { Document } from 'mongoose';
 
 export type TripDocument = Trip & Document;
 
 export class Start {
   time: number;
-  lat: string;
-  lon: string;
+  lat: number;
+  lon: number;
   address: string
 }
 
 export class End {
   time: number;
-  lat: string;
-  lon: string;
+  lat: number;
+  lon: number;
   address: string
 }
 
