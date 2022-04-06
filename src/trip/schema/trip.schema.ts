@@ -22,7 +22,7 @@ export class End {
 @Schema()
 export class Trip {
   @Prop({default: genUUIDv4()})
-  id: string;
+  _id: string;
 
   @Prop()
   start: Start;
