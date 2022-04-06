@@ -98,5 +98,15 @@ export class TripService {
 
   }
 
+  public async getAllTrpis(startGte?: number, startLte?: number, distanceGte?: number, limit?: number, offset?: number) {
+    
+    //No se startGte, ni startGte debido a que en trip start es un objeto y en la documentacion de la
+    //api estos valores son enteres, entonces no supe cómo aplicar estos filtros
+
+    return {
+      "trips": await this.tripModel.find({distance: {$gte: distanceGte}}).limit(limit).skip(offset)
+    }
+  }
+
 
 }

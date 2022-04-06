@@ -28,5 +28,6 @@ export class TripController {
   public async getTrips(@Query('startGte') startGte?: number, @Query('startLte') startLte?: number, @Query('distanceGte') distanceGte?: number,
     @Query('limit') limit?: number, @Query('offset') offset?: number) {
 
+      return await this.tripService.getAllTrpis(startGte, startLte, distanceGte, limit, offset)
   }
 }
